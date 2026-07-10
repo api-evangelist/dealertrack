@@ -1,0 +1,51 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Dealertrack
+providerId: dealertrack
+created: '2026-07-10'
+modified: '2026-07-10'
+reconciled: false
+tags:
+- Automotive
+- DMS
+- Opentrack
+- Cox Automotive
+- Partner Gated
+- Rate Limiting
+- Quotas
+description: >-
+  Dealertrack (Cox Automotive) does not publish numeric API rate limits. Its
+  developer surfaces are partner-gated: the Opentrack DMS integration program and
+  the Cox Automotive Integration Platform (developer.coxautoinc.com). Any throttling,
+  concurrency, or quota rules are governed by the partner/certification agreement and
+  by per-dealer, per-vendor authorization rather than a documented public request
+  cap. No open rate-limit reference exists.
+notes: >-
+  No public per-account or per-endpoint limits are documented as of the review date.
+  Limits, if any, are defined in the Opentrack certification agreement or the Cox
+  Automotive partner terms. Confirm during partner onboarding.
+sources:
+- https://us.dealertrack.com/resources/dealertrack-dms-opentrack-integration/
+- https://developer.coxautoinc.com/
+responseCodes:
+  throttled: 429
+limits:
+- name: Opentrack DMS Access
+  scope: vendor-dealer
+  metric: requests
+  limit: not published
+  notes: Governed per dealer and per vendor by the Opentrack certification agreement, not a documented public cap.
+- name: Cox Automotive Integration Platform
+  scope: partner
+  metric: requests
+  limit: not published
+  notes: Governed by the OAuth partner agreement on developer.coxautoinc.com; no public numeric limit.
+policies:
+- name: Partner Authorization
+  description: Access requires per-dealer authorization plus vendor certification (Opentrack) or issued OAuth client credentials (Cox Automotive Integration Platform).
+- name: Backoff Strategy
+  description: Clients should implement exponential backoff with jitter and honor Retry-After on any 429 responses, per standard REST practice.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

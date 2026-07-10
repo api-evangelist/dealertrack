@@ -1,0 +1,115 @@
+aid: dealertrack
+name: Dealertrack
+review:
+  question: Does Dealertrack expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-10'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Dealertrack (a Cox Automotive brand)
+    publishes no open, self-service developer API of any kind, and no public
+    WebSocket (ws:// or wss://) or server-push transport is documented. The
+    integration surfaces that do exist - the Opentrack DMS integration program
+    and the Cox Automotive Integration Platform partner storefront - are
+    partner-gated REST over HTTPS, described as real-time and bidirectional but
+    exchanged over request/response web services, not a documented public
+    WebSocket. There is no publicly documented event/streaming contract to model.
+findings:
+  summary: |
+    Dealertrack does not publish a documented public WebSocket API. Dealertrack
+    is part of Cox Automotive and sells a cloud Dealer Management System (DMS),
+    digital contracting / F&I tooling, and the largest US dealer-to-lender credit
+    application network. Its developer surface is partner-gated, not open:
+      * Opentrack - the Dealertrack DMS third-party integration program.
+        Described as secure, real-time, and bidirectional. Certified vendors can
+        pull DMS data (vehicles, customers, deals, repair orders, parts, general
+        ledger) and push data back (new deals, customer updates, service
+        appointments, payments, journal entries). Access is granted per dealer
+        and per vendor; a vendor must complete Opentrack certification and pay
+        nominal annual fees, or integrate through a certified Opentrack partner.
+      * Cox Automotive Integration Platform (developer.coxautoinc.com) - the
+        OAuth-secured (Okta) partner storefront through which Cox Automotive
+        brand APIs, including Dealertrack credit/F&I functions, are exposed to
+        onboarded partners.
+    No open API reference, self-service signup, public base URL, SDK, or public
+    WebSocket/SSE endpoint was found. All transports are request/response REST
+    over HTTPS behind partner onboarding.
+  accessModel: |
+    Partner-gated. There is no public self-service developer account. Opentrack
+    access requires dealer-level authorization plus vendor certification and
+    annual fees (or a certified partner). The Cox Automotive Integration Platform
+    requires OAuth client credentials issued after partner onboarding. Pricing is
+    contact-sales / enterprise, layered with Opentrack data-access fees.
+  divestitureNote: |
+    Dealertrack's Registration & Titling businesses - RTS (Registration and
+    Titling Solutions), RegUSA (nationwide title and registration), Accelerated
+    Title, and CMS (Collateral Management Services) - were divested by Cox
+    Automotive to Vitu (closed January 2025). Those registration/titling
+    capabilities are therefore no longer modeled here as Dealertrack APIs.
+  transports:
+    - protocol: REST
+      scheme: https
+      documented: partner-only
+      note: Opentrack DMS integration - real-time, bidirectional REST over HTTPS, gated by certification and per-dealer/per-vendor authorization. No open reference.
+    - protocol: REST
+      scheme: https
+      documented: partner-only
+      note: Cox Automotive Integration Platform (developer.coxautoinc.com) - OAuth-secured (Okta) partner storefront for Cox brand APIs including Dealertrack credit/F&I.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No public WebSocket endpoint is documented anywhere in Dealertrack or Cox Automotive developer materials as of the review date.
+  endpointsModeled:
+    note: |
+      The items below are logical data objects/operations inferred from public
+      Opentrack program and DMS product documentation. They are MODELED, not taken
+      from an open API reference, and no confirmed public paths or base URL exist.
+    read:
+      - Vehicle inventory
+      - Customers
+      - Deals
+      - Repair orders
+      - Parts
+      - General ledger / accounting
+    write:
+      - New deals
+      - Customer updates
+      - Service appointments
+      - Payments
+      - Journal entries
+    creditAndFI:
+      - Submit credit application to lender network
+      - Retrieve lender decision
+      - Digital contracting / eContracting
+sources:
+  - url: https://us.dealertrack.com/
+    type: Website
+    note: Dealertrack product homepage - DMS, F&I, lender network.
+  - url: https://us.dealertrack.com/content/dealertrack/en/dealer-management-solutions/platform.html
+    type: Documentation
+    note: DMS open platform - 375+ OEM integration points, 275+ certified Opentrack third-party vendors.
+  - url: https://us.dealertrack.com/resources/dealertrack-dms-opentrack-integration/
+    type: Documentation
+    note: Opentrack - secure, real-time, bidirectional third-party DMS integration; certification and annual fees, or certified partner.
+  - url: https://us.dealertrack.com/content/dealertrack/en/integrations.html
+    type: Documentation
+    note: Integrations overview and integration categories (CRM, inventory, desking, F&I menu, service).
+  - url: https://developer.coxautoinc.com/
+    type: Portal
+    note: Cox Automotive Integration Platform - OAuth (Okta) partner storefront; content loads behind a gated React app.
+  - url: https://www.coxautoinc.com/brands/dealertrack/
+    type: Documentation
+    note: Cox Automotive brand page for Dealertrack (DMS, F&I, lender network).
+  - url: https://vitu.com/resources/specialannouncement20250106.html
+    type: PressRelease
+    note: Vitu closed acquisition of Dealertrack's registration & titling businesses (RTS, RegUSA, Accelerated Title, CMS) from Cox Automotive, Jan 2025.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No public WebSocket or server-push transport exists to model, and Dealertrack
+    publishes no open API reference. The real integration surfaces (Opentrack and
+    the Cox Automotive Integration Platform) are partner-gated request/response
+    REST over HTTPS. The apis.yml documents these honestly with endpointsModeled
+    flags rather than fabricating endpoints, and no AsyncAPI document was created.

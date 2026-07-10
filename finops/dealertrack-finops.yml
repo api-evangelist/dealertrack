@@ -1,0 +1,92 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Dealertrack
+providerId: dealertrack
+created: '2026-07-10'
+modified: '2026-07-10'
+reconciled: false
+tags:
+- Automotive
+- DMS
+- Opentrack
+- F&I
+- Cox Automotive
+- Partner Gated
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of Dealertrack (Cox Automotive) integration spend. There is no
+  usage-metered public API price. Cost is contract-driven: Opentrack certified
+  vendors pay nominal annual certification fees plus data-access fees set per vendor
+  and per API, or route through a certified Opentrack partner whose commercial terms
+  apply. Cox Automotive Integration Platform access is a negotiated partner agreement.
+  For dealerships, DMS and F&I costs sit inside the broader Dealertrack subscription
+  and data-fee schedule. Exact rates are not published and are not reconciled here.
+notes: >-
+  Dominant cost drivers are annual certification/partner fees and per-API data-access
+  fees rather than metered request volume. Verify current terms with Dealertrack /
+  Cox Automotive during reconciliation.
+sources:
+- https://us.dealertrack.com/
+- https://us.dealertrack.com/resources/dealertrack-dms-opentrack-integration/
+- https://developer.coxautoinc.com/
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Cox Automotive
+serviceCategory: Automotive Dealership Software
+billingModel:
+  pricingCategory: Contract-Based
+  billingFrequency: Annual
+  billingCurrency: USD
+  chargeCategories:
+  - Purchase
+  - Usage
+focusColumns:
+  ServiceName: Dealertrack DMS and Opentrack Integration
+  ServiceCategory: Automotive Dealership Software
+  ProviderName: Dealertrack
+  PublisherName: Cox Automotive
+  InvoiceIssuerName: Cox Automotive
+  BillingCurrency: USD
+  ChargeCategory: Purchase
+  PricingCategory: Contract-Based
+meters:
+- name: opentrack_certification
+  description: Annual Opentrack vendor certification fee (nominal; amount not disclosed).
+  unit: contract
+  aggregation: sum
+  dimensions:
+  - vendor
+- name: opentrack_data_fees
+  description: Per-vendor, per-API data-access fees for Opentrack DMS integration.
+  unit: contract
+  aggregation: sum
+  dimensions:
+  - vendor
+  - api
+  - dealer
+- name: partner_agreement
+  description: Negotiated Cox Automotive Integration Platform partner agreement fee.
+  unit: contract
+  aggregation: sum
+  dimensions:
+  - partner
+principles:
+- name: Visibility
+  description: Track annual certification and per-API data-access fees per integration and per dealer; there is no metered request line item to monitor.
+- name: Allocation
+  description: Map Opentrack data fees to the dealership integrations and internal products that consume DMS data.
+- name: Optimization
+  description: Consider routing through a certified Opentrack partner to avoid direct certification overhead when integrating with many DMS providers; scope data access to only the APIs actually needed.
+- name: Accountability
+  description: Assign an owner for the Opentrack / Cox Automotive partner relationship and review annual fees against the value delivered by the integration.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

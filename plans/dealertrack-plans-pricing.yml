@@ -1,0 +1,108 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Dealertrack
+providerId: dealertrack
+created: '2026-07-10'
+modified: '2026-07-10'
+reconciled: false
+tags:
+- Automotive
+- DMS
+- Opentrack
+- F&I
+- Cox Automotive
+- Partner Gated
+- Plans
+description: >-
+  Dealertrack (Cox Automotive) does not publish open, self-service API pricing.
+  Access to its developer surfaces is partner-gated and contact-sales. Third-party
+  vendors reach the Dealertrack DMS through the Opentrack integration program, which
+  requires completing a certification process and paying nominal annual fees plus
+  per-vendor/per-API data-access fees, or integrating through an already-certified
+  Opentrack partner. Broader Cox Automotive brand APIs (including Dealertrack
+  credit/F&I functions) are exposed to onboarded partners through the Cox Automotive
+  Integration Platform (developer.coxautoinc.com) under negotiated partner agreements.
+  Exact fees are not published and are not reconciled here.
+notes: >-
+  All figures are contact-sales / enterprise. Opentrack fees are described publicly
+  only as "nominal annual fees" plus data-access fees set per vendor and per API;
+  precise amounts are not disclosed. Verify current terms directly with Dealertrack
+  / Cox Automotive during reconciliation.
+sources:
+- https://us.dealertrack.com/
+- https://us.dealertrack.com/resources/dealertrack-dms-opentrack-integration/
+- https://us.dealertrack.com/content/dealertrack/en/dealer-management-solutions/platform.html
+- https://developer.coxautoinc.com/
+plans:
+- id: opentrack-certified-vendor
+  name: Opentrack Certified Vendor
+  type: enterprise
+  description: >-
+    Direct third-party integration with the Dealertrack DMS. The vendor completes
+    Opentrack certification and pays nominal annual fees plus data-access fees set
+    per vendor and per API. Access is authorized per dealer by dealership
+    administrators. Provides real-time, bidirectional read/write to DMS data
+    domains.
+  entries:
+  - label: Opentrack Annual Certification and Data Fees
+    name: opentrack_certified
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: us
+    unit: 1
+    price: contact sales (nominal annual fees plus per-vendor/per-API data fees)
+    userMultiplied: false
+  elements:
+  - name: Real-Time Bidirectional DMS Access
+  - name: Per-Dealer Authorization
+  - name: Vendor Certification Required
+- id: opentrack-via-partner
+  name: Opentrack via Certified Partner
+  type: enterprise
+  description: >-
+    Integrate with the Dealertrack DMS by connecting through an already-certified
+    Opentrack integration partner (an "integrate once, connect to many" aggregator)
+    rather than certifying directly. Commercial terms are set by the partner.
+  entries:
+  - label: Partner-Mediated Access
+    name: opentrack_partner
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: us
+    unit: 1
+    price: contact partner (terms set by the certified Opentrack partner)
+    userMultiplied: false
+  elements:
+  - name: No Direct Certification
+  - name: Aggregated DMS Connectivity
+- id: cox-integration-platform-partner
+  name: Cox Automotive Integration Platform Partner
+  type: enterprise
+  description: >-
+    Partner access to Cox Automotive brand APIs, including Dealertrack credit/F&I
+    functions, through the OAuth-secured Cox Automotive Integration Platform at
+    developer.coxautoinc.com. Requires partner onboarding and issued OAuth
+    credentials.
+  entries:
+  - label: Partner Onboarding Agreement
+    name: cox_platform_partner
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: OAuth Client Credentials
+  - name: Partner Onboarding Required
+  - name: Cox Brand API Access
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

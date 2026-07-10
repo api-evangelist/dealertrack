@@ -1,0 +1,132 @@
+aid: dealertrack
+url: https://raw.githubusercontent.com/api-evangelist/dealertrack/refs/heads/main/apis.yml
+name: Dealertrack
+kind: company
+description: >-
+  Dealertrack is a Cox Automotive brand providing automotive dealership software -
+  a cloud-based Dealer Management System (DMS), digital contracting and F&I tools,
+  and the largest dealer-to-lender credit application network in the United States.
+  Its developer surface is partner-gated. Dealership systems integrate through the
+  Opentrack third-party integration program (real-time, bidirectional REST access to
+  DMS data such as vehicles, customers, deals, repair orders, parts, and general
+  ledger) and through the Cox Automotive Integration Platform partner storefront at
+  developer.coxautoinc.com (OAuth-secured, partner onboarding required). Dealertrack
+  publishes no open, self-service public API; access requires Opentrack certification
+  and annual fees, integration through a certified Opentrack partner, or a Cox
+  Automotive partner agreement. The endpoints described here are modeled from public
+  product and program documentation, not from an open API reference.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Automotive
+- Dealership
+- DMS
+- Dealer Management System
+- F&I
+- Credit Application
+- Lender Network
+- Cox Automotive
+- Opentrack
+- Partner Gated
+created: '2026-07-10'
+modified: '2026-07-10'
+specificationVersion: '0.19'
+apis:
+- aid: dealertrack:dealertrack-opentrack-dms-data-api
+  name: Dealertrack Opentrack DMS Data API
+  tags:
+  - DMS
+  - Opentrack
+  - Read
+  - Inventory
+  - CRM
+  - Service
+  - Accounting
+  - Partner Gated
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://us.dealertrack.com/resources/dealertrack-dms-opentrack-integration/
+  endpointsModeled: true
+  properties:
+  - url: https://us.dealertrack.com/content/dealertrack/en/dealer-management-solutions/platform.html
+    type: Documentation
+  - url: https://us.dealertrack.com/resources/dealertrack-dms-opentrack-integration/
+    type: Documentation
+  - url: https://developer.coxautoinc.com/
+    type: Portal
+  description: >-
+    Real-time, bidirectional read access to Dealertrack DMS data through the Opentrack
+    third-party integration program. Certified vendors can retrieve dealership data
+    domains including vehicle inventory, customers, deals, repair orders, parts, and
+    general ledger / accounting records. Access is granted per dealer and per vendor
+    and requires Opentrack certification (or integration through a certified partner).
+    Endpoints are modeled from Opentrack program documentation; no open API reference
+    is published.
+- aid: dealertrack:dealertrack-opentrack-dms-writeback-api
+  name: Dealertrack Opentrack DMS Write-Back API
+  tags:
+  - DMS
+  - Opentrack
+  - Write
+  - Deals
+  - Service Appointments
+  - Accounting
+  - Partner Gated
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://us.dealertrack.com/resources/dealertrack-dms-opentrack-integration/
+  endpointsModeled: true
+  properties:
+  - url: https://us.dealertrack.com/content/dealertrack/en/dealer-management-solutions/platform.html
+    type: Documentation
+  - url: https://us.dealertrack.com/content/dealertrack/en/integrations.html
+    type: Documentation
+  - url: https://developer.coxautoinc.com/
+    type: Portal
+  description: >-
+    Real-time, bidirectional write access to the Dealertrack DMS through Opentrack.
+    Certified vendors can push data back into the DMS - creating new deals, updating
+    customer records, booking service appointments, posting payments, and writing
+    journal entries to the general ledger. Like the read side, this is partner-gated,
+    granted per dealer and per vendor, and requires Opentrack certification or a
+    certified integration partner. Endpoints are modeled from public program
+    documentation.
+- aid: dealertrack:dealertrack-credit-lender-network-api
+  name: Dealertrack Credit and Lender Network API
+  tags:
+  - F&I
+  - Credit Application
+  - Lender Network
+  - Financing
+  - Partner Gated
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://us.dealertrack.com/
+  endpointsModeled: true
+  properties:
+  - url: https://www.coxautoinc.com/brands/dealertrack/
+    type: Documentation
+  - url: https://developer.coxautoinc.com/
+    type: Portal
+  description: >-
+    Programmatic access to Dealertrack's dealer-to-lender credit application network
+    and F&I workflow - submitting credit applications from a dealership to lenders and
+    receiving decisions, plus related digital contracting / eContracting functions.
+    This surface is exposed to certified partners through the Cox Automotive
+    Integration Platform (developer.coxautoinc.com) under an OAuth-secured, partner
+    onboarding model rather than an open public API. Endpoints are modeled from public
+    product documentation; a detailed public API reference is not available.
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/dealertrack
+- type: Website
+  url: https://us.dealertrack.com/
+- type: Documentation
+  url: https://developer.coxautoinc.com/
+- type: Portal
+  url: https://developer.coxautoinc.com/
+- type: Plans
+  url: plans/dealertrack-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/dealertrack-rate-limits.yml
+- type: FinOps
+  url: finops/dealertrack-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
