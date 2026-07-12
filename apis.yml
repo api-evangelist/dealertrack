@@ -113,6 +113,10 @@ apis:
     onboarding model rather than an open public API. Endpoints are modeled from public
     product documentation; a detailed public API reference is not available.
 common:
+- type: VulnerabilityDisclosure
+  url: security/dealertrack-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/dealertrack-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/dealertrack
 - type: Website
