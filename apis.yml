@@ -15,7 +15,19 @@ description: >-
   and annual fees, integration through a certified Opentrack partner, or a Cox
   Automotive partner agreement. The endpoints described here are modeled from public
   product and program documentation, not from an open API reference.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/dealertrack.png
 tags:
 - Automotive
 - Dealership
