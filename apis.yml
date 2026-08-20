@@ -48,6 +48,14 @@ apis:
   tags:
   - DMS
   - Opentrack
+  - Inventory
+  - CRM
+  - Service
+  - Accounting
+  - Partner Gated
+  tags_raw:
+  - DMS
+  - Opentrack
   - Read
   - Inventory
   - CRM
@@ -75,6 +83,13 @@ apis:
 - aid: dealertrack:dealertrack-opentrack-dms-writeback-api
   name: Dealertrack Opentrack DMS Write-Back API
   tags:
+  - DMS
+  - Opentrack
+  - Deals
+  - Service Appointments
+  - Accounting
+  - Partner Gated
+  tags_raw:
   - DMS
   - Opentrack
   - Write
