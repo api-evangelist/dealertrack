@@ -15,6 +15,17 @@ description: >-
   and annual fees, integration through a certified Opentrack partner, or a Cox
   Automotive partner agreement. The endpoints described here are modeled from public
   product and program documentation, not from an open API reference.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
