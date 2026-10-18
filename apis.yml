@@ -65,7 +65,6 @@ apis:
   - CRM
   - Services
   - Accounting
-  - Partner Gated
   tags_raw:
   - DMS
   - Opentrack
@@ -101,7 +100,6 @@ apis:
   - Deals
   - Service Appointments
   - Accounting
-  - Partner Gated
   tags_raw:
   - DMS
   - Opentrack
@@ -131,6 +129,11 @@ apis:
 - aid: dealertrack:dealertrack-credit-lender-network-api
   name: Dealertrack Credit and Lender Network API
   tags:
+  - F&I
+  - Credit Application
+  - Lender Network
+  - Financing
+  tags_raw:
   - F&I
   - Credit Application
   - Lender Network
