@@ -1,0 +1,126 @@
+generated: '2026-10-20'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 9
+  own: 4
+  other_domain: 4
+  platform: 1
+  roles:
+  - api
+  - docs
+  - identity
+  - other
+  - security
+  - support
+  - website
+hosts:
+- host: api.coxautoinc.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: coxautoinc.com
+  role: api
+  relation: other-domain
+- host: api.dealertrack.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: dealertrack.com
+  role: api
+  relation: own
+- host: developer.coxautoinc.com
+  found_by:
+  - pointer
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - Documentation
+  - Portal
+  serves:
+  - docs
+  registrable_domain: coxautoinc.com
+  role: docs
+  relation: other-domain
+- host: help.coxautoinc.com
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: coxautoinc.com
+  role: support
+  relation: other-domain
+- host: resources.dealertrack.com
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: dealertrack.com
+  role: other
+  relation: own
+- host: sso.dealertrack.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - well-known
+  - vendor-detect
+  types:
+  - Login
+  serves:
+  - cdn
+  vendor: akamai
+  registrable_domain: dealertrack.com
+  role: identity
+  relation: own
+- host: us.dealertrack.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  - GettingStarted
+  - PrivacyPolicy
+  - TermsOfService
+  - Support
+  - Blog
+  serves:
+  - docs
+  - cdn
+  vendor: cloudfront
+  registrable_domain: dealertrack.com
+  role: website
+  relation: own
+- host: www.coxautoinc.com
+  found_by:
+  - pointer
+  types:
+  - Security
+  serves: []
+  registrable_domain: coxautoinc.com
+  role: security
+  relation: other-domain
+- host: www.linkedin.com
+  found_by:
+  - pointer
+  types:
+  - LinkedIn
+  serves: []
+  registrable_domain: linkedin.com
+  role: other
+  relation: platform

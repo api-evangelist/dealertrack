@@ -1,7 +1,11 @@
 aid: dealertrack
+
 url: https://raw.githubusercontent.com/api-evangelist/dealertrack/refs/heads/main/apis.yml
+
 name: Dealertrack
+
 kind: company
+
 description: >-
   Dealertrack is a Cox Automotive brand providing automotive dealership software -
   a cloud-based Dealer Management System (DMS), digital contracting and F&I tools,
@@ -15,6 +19,7 @@ description: >-
   and annual fees, integration through a certified Opentrack partner, or a Cox
   Automotive partner agreement. The endpoints described here are modeled from public
   product and program documentation, not from an open API reference.
+
 deliveryModel:
   model: saas
   open_source: false
@@ -26,6 +31,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: unknown
   onboarding: unknown
@@ -41,7 +47,9 @@ accessModel:
   - plans
   generated: '2026-07-22'
   method: derived
+
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/dealertrack.png
+
 tags:
 - Automotive
 - Dealership
@@ -52,9 +60,63 @@ tags:
 - Lender Network
 - Cox Automotive
 - Opentrack
+
 created: '2026-07-10'
+
 modified: '2026-07-10'
+
 specificationVersion: '0.23'
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+
+common:
+- type: SecurityTxt
+  url: well-known/dealertrack-www-security.txt
+- type: Security
+  url: https://www.coxautoinc.com/responsible-disclosure
+- type: SecurityTxt
+  url: well-known/dealertrack-security.txt
+- type: SecurityTxt
+  url: well-known/dealertrack-resources-security.txt
+- type: WellKnown
+  url: well-known/dealertrack-well-known.yml
+- type: Hosts
+  url: hosts/dealertrack-hosts.yml
+- type: Vendors
+  url: vendors/dealertrack-vendors.yml
+- type: VulnerabilityDisclosure
+  url: security/dealertrack-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/dealertrack-domain-security.yml
+- type: LinkedIn
+  url: https://www.linkedin.com/company/dealertrack
+- type: Website
+  url: https://us.dealertrack.com/
+- type: Documentation
+  url: https://developer.coxautoinc.com/
+- type: Portal
+  url: https://developer.coxautoinc.com/
+- type: Plans
+  url: plans/dealertrack-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/dealertrack-rate-limits.yml
+- type: FinOps
+  url: finops/dealertrack-finops.yml
+- type: GettingStarted
+  url: https://us.dealertrack.com/content/dealertrack/en/contact/product-demo.html
+- type: Login
+  url: https://sso.dealertrack.com/affwebservices/public/oauthtokenconsumer/Dealertrack-oAuthClient?AuthzServerID=Dealertrack-oAuthZserver
+- type: PrivacyPolicy
+  url: https://us.dealertrack.com/content/dealertrack/en/privacy-policy.html
+- type: TermsOfService
+  url: https://us.dealertrack.com/content/dealertrack/en/terms-and-conditions.html
+- type: Support
+  url: https://us.dealertrack.com/content/dealertrack/en/support/chat-support.html/
+- type: Blog
+  url: https://us.dealertrack.com/resources/resource-format/blog/
+
 apis:
 - aid: dealertrack:dealertrack-opentrack-dms-data-api
   name: Dealertrack Opentrack DMS Data API
@@ -155,27 +217,22 @@ apis:
     Integration Platform (developer.coxautoinc.com) under an OAuth-secured, partner
     onboarding model rather than an open public API. Endpoints are modeled from public
     product documentation; a detailed public API reference is not available.
-common:
-- type: VulnerabilityDisclosure
-  url: security/dealertrack-vulnerability-disclosure.yml
-- type: DomainSecurity
-  url: security/dealertrack-domain-security.yml
-- type: LinkedIn
-  url: https://www.linkedin.com/company/dealertrack
-- type: Website
-  url: https://us.dealertrack.com/
-- type: Documentation
-  url: https://developer.coxautoinc.com/
-- type: Portal
-  url: https://developer.coxautoinc.com/
-- type: Plans
-  url: plans/dealertrack-plans-pricing.yml
-- type: RateLimits
-  url: rate-limits/dealertrack-rate-limits.yml
-- type: FinOps
-  url: finops/dealertrack-finops.yml
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+
 x-tags-removed:
 - Partner Gated
+
+x-enrichment:
+  date: '2026-10-20'
+  status: minimal
+  artifacts_added: 4
+  pass: local-v5
+x-coverage:
+  state: gated
+  reason: partner-login
+  detail: Dealertrack's Opentrack DMS API is reachable only through the Cox Automotive Integration Platform partner storefront at developer.coxautoinc.com, which publishes no open spec, and its MCP endpoint api.coxautoinc.com/mcp answers 403 anonymously.
+  evidence:
+  - url: https://developer.coxautoinc.com/
+    status: 200
+  - url: https://api.coxautoinc.com/mcp
+    status: 403
+  checked: '2026-10-20'
