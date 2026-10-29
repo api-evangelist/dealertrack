@@ -1,4 +1,4 @@
-# Dealertrack (dealertrack)
+# Dealertrack
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,74 +64,111 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Dealertrack is a [Cox Automotive](https://www.coxautoinc.com/brands/dealertrack/) brand providing automotive dealership software - a cloud-based Dealer Management System (DMS), digital contracting and F&I tools, and the largest dealer-to-lender credit application network in the United States.
+Dealertrack is a Cox Automotive brand providing automotive dealership software - a cloud-based Dealer Management System (DMS), digital contracting and F&I tools, and the largest dealer-to-lender credit application network in the United States. Its developer surface is partner-gated. Dealership systems integrate through the Opentrack third-party integration program (real-time, bidirectional REST access to DMS data such as vehicles, customers, deals, repair orders, parts, and general ledger) and through the Cox Automotive Integration Platform partner storefront at developer.coxautoinc.com (OAuth-secured, partner onboarding required). Dealertrack publishes no open, self-service public API; access requires Opentrack certification and annual fees, integration through a certified Opentrack partner, or a Cox Automotive partner agreement. The endpoints described here are modeled from public product and program documentation, not from an open API reference.
 
-**Access model: partner-gated.** Dealertrack does **not** publish an open, self-service public API. Its developer surface is reached two ways, both of which require onboarding:
+**Areas:** Automotive · Dealership · DMS · Dealer Management System · F&I · Credit Application · Lender Network · Cox Automotive · Opentrack
 
-- **Opentrack** - the Dealertrack DMS third-party integration program. Described as secure, real-time, and bidirectional, it lets certified vendors pull DMS data (vehicles, customers, deals, repair orders, parts, general ledger) and push data back (new deals, customer updates, service appointments, payments, journal entries). A vendor must complete Opentrack certification and pay nominal annual fees plus per-vendor/per-API data-access fees, or integrate through an already-certified Opentrack partner. Access is authorized per dealer by dealership administrators. The DMS platform advertises 375+ OEM integration points and 275+ certified third-party vendors.
-- **Cox Automotive Integration Platform** ([developer.coxautoinc.com](https://developer.coxautoinc.com/)) - the OAuth-secured (Okta) partner storefront through which Cox Automotive brand APIs, including Dealertrack credit/F&I functions, are exposed to onboarded partners.
+## Dealertrack on APIs.io
 
-No open API reference, self-service signup, public base URL, SDK, or public WebSocket/SSE endpoint was found. The APIs in this entry are documented honestly with an `endpointsModeled` flag - the operations are inferred from public product and program documentation, not copied from an open API reference, and no endpoints have been fabricated.
+Everything profiled for Dealertrack is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/dealertrack/](https://apis.io/providers/dealertrack/)** — or go straight to one of the APIs or properties below.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/dealertrack/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/dealertrack/refs/heads/main/apis.yml)
+### APIs (3)
 
-## Divestiture note
+- [Dealertrack Opentrack DMS Data API](https://apis.io/apis/dealertrack/dealertrack-opentrack-dms-data-api/) — Real-time, bidirectional read access to Dealertrack DMS data through the Opentrack third-party integration program. Certified vendors can retrieve…
+- [Dealertrack Opentrack DMS Write-Back API](https://apis.io/apis/dealertrack/dealertrack-opentrack-dms-writeback-api/) — Real-time, bidirectional write access to the Dealertrack DMS through Opentrack. Certified vendors can push data back into the DMS - creating new deals,…
+- [Dealertrack Credit and Lender Network API](https://apis.io/apis/dealertrack/dealertrack-credit-lender-network-api/) — Programmatic access to Dealertrack's dealer-to-lender credit application network and F&I workflow - submitting credit applications from a dealership to…
 
-Dealertrack's Registration & Titling businesses - RTS (Registration and Titling Solutions), RegUSA (nationwide title and registration), Accelerated Title, and CMS (Collateral Management Services) - were divested by Cox Automotive to **Vitu** (acquisition closed January 2025). Those registration/titling capabilities are therefore **not** modeled here as Dealertrack APIs.
+### Published properties
 
-## Tags
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- Automotive
-- Dealership
-- DMS
-- F&I
-- Credit Application
-- Lender Network
-- Cox Automotive
-- Opentrack
-- Partner Gated
+#### Security (2)
 
-## Timestamps
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Created:** 2026-07-10
-- **Modified:** 2026-07-10
+- [Dealertrack Domain Security](https://apis.io/security/dealertrack/dealertrack-domain-security/)
+- [Dealertrack Vulnerability Disclosure](https://apis.io/security/dealertrack/dealertrack-vulnerability-disclosure/)
 
-## APIs (modeled, partner-gated)
+#### Plans and pricing (1)
 
-### Dealertrack Opentrack DMS Data API
+Published plans, tiers and prices.
 
-Real-time, bidirectional **read** access to Dealertrack DMS data through the Opentrack integration program - vehicle inventory, customers, deals, repair orders, parts, and general ledger / accounting. Partner-gated; endpoints modeled from program documentation.
+- [Dealertrack Plans Pricing](https://apis.io/plans/dealertrack/dealertrack-plans-pricing/)
 
-- **Program:** [Opentrack integration](https://us.dealertrack.com/resources/dealertrack-dms-opentrack-integration/)
-- **Portal:** [developer.coxautoinc.com](https://developer.coxautoinc.com/)
+#### Rate limits (1)
 
-### Dealertrack Opentrack DMS Write-Back API
+Published request limits.
 
-Real-time, bidirectional **write** access to the DMS through Opentrack - creating new deals, updating customer records, booking service appointments, posting payments, and writing journal entries. Partner-gated; endpoints modeled.
+- [Dealertrack Rate Limits](https://apis.io/rate-limits/dealertrack/dealertrack-rate-limits/)
 
-- **Program:** [Opentrack integration](https://us.dealertrack.com/resources/dealertrack-dms-opentrack-integration/)
-- **Portal:** [developer.coxautoinc.com](https://developer.coxautoinc.com/)
+#### FinOps (1)
 
-### Dealertrack Credit and Lender Network API
+What the API costs to run, by operation.
 
-Programmatic access to Dealertrack's dealer-to-lender credit application network and F&I / eContracting workflow, exposed to certified partners through the Cox Automotive Integration Platform under an OAuth-secured partner model. Partner-gated; endpoints modeled.
+- [Dealertrack Finops](https://apis.io/finops/dealertrack/dealertrack-finops/)
 
-- **Portal:** [developer.coxautoinc.com](https://developer.coxautoinc.com/)
+## Where to find this API
 
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- [LinkedIn](https://www.linkedin.com/company/dealertrack)
 - [Website](https://us.dealertrack.com/)
-- [Documentation / Portal](https://developer.coxautoinc.com/)
-- [Plans](plans/dealertrack-plans-pricing.yml)
-- [Rate Limits](rate-limits/dealertrack-rate-limits.yml)
-- [Fin Ops](finops/dealertrack-finops.yml)
+- [Documentation](https://developer.coxautoinc.com/)
+- [Getting started](https://us.dealertrack.com/content/dealertrack/en/contact/product-demo.html)
+- [Support](https://us.dealertrack.com/content/dealertrack/en/support/chat-support.html/)
+- [Blog](https://us.dealertrack.com/resources/resource-format/blog/)
+- [Security](https://www.coxautoinc.com/responsible-disclosure)
+- [Terms of service](https://us.dealertrack.com/content/dealertrack/en/terms-and-conditions.html)
+- [Privacy policy](https://us.dealertrack.com/content/dealertrack/en/privacy-policy.html)
 
-## WebSocket Review
+## API Evangelist rating
 
-**Does Dealertrack expose a documented public WebSocket API?** No. See [review.yml](review.yml). All integration surfaces are partner-gated request/response REST over HTTPS; no public WebSocket (ws:// or wss://) or server-push transport is documented, so no AsyncAPI document was authored.
+**Kin Score 23.1** — emerging · rubric 0.24.0 · scored 2026-10-20
 
-## Maintainers
+| Facet | Score |
+|---|---|
+| Discoverability | 62.5 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 15.8 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 42.1 |
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Agent readiness 0.6** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 19.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/dealertrack/](https://apis.io/providers/dealertrack/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Dealertrack: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/dealertrack/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
